@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Cycle</title>
+    <style>
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 2000px;
+            padding: 20px;
+            border: 3px solid green;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .box {
+            width: 14vw;
+            height: 70px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-sizing: border-box;
+        }
+
+
+        #box1 {
+            margin-top: -200px;
+        }
+
+
+        #box7 {
+            margin-bottom: -200px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div id="container">
+        <div id="box1" class="box"><h1></h1></div>
+        <div id="box2" class="box"><h1></h1></div>
+        <div id="box3" class="box"><h1></h1></div>
+        <div id="box4" class="box"><h1></h1></div>
+        <div id="box5" class="box"><h1></h1></div>
+        <div id="box6" class="box"><h1></h1></div>
+        <div id="box7" class="box"><h1></h1></div>
+    </div>
+</section>
+
+<script>
+    let colors = ['blue', 'green', 'red', 'purple', 'orange', 'yellow', 'pink'];
+
+    function changeColors() {
+       let last_color = colors.pop();
+       colors.unshift(last_color);
+       console.log(colors);
+
+       document.getElementById("box1").style.backgroundColor = colors[0];
+       document.getElementById("box2").style.backgroundColor = colors[1];
+       document.getElementById("box3").style.backgroundColor = colors[2];
+       document.getElementById("box4").style.backgroundColor = colors[3];
+       document.getElementById("box5").style.backgroundColor = colors[4];
+       document.getElementById("box6").style.backgroundColor = colors[5];
+       document.getElementById("box7").style.backgroundColor = colors[6];
+    }
+
+    setInterval(changeColors, 1000);
+</script>
+</body>
+</html>
